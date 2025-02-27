@@ -15,31 +15,32 @@ const htmlTemplate = `
 <head>
     <meta charset="UTF-8">
     <title>Govdata Dashboard</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body style="padding: 3em;">
-    <div class="container">
-        <h1 style="text-align: center;">
+<body class="p-12">
+    <div class="max-w-6xl mx-auto">
+        <h1 class="text-center text-5xl font-semibold">
             Number of Datasets Published by Federal Ministries on
-            <a href="https://www.govdata.de/" target="_blank">Govdata</a>
+            <a href="https://www.govdata.de/" target="_blank" class="text-blue-600 hover:underline">Govdata</a>
         </h1>
         <br>
-        <table class="table table-hover">
-            <thead>
-            <tr>
-                <th scope="col">Federal Ministry</th>
-                <th scope="col">Datasets</th>
-            </tr>
+        <table class="w-full table-auto border-collapse">
+            <thead class="border-t border-b-2">
+                <tr>
+                    <th class="px-4 py-3 text-left">Federal Ministry</th>
+                    <th class="px-4 py-3 text-left">Datasets</th>
+                </tr>
             </thead>
             <tbody>
-            <% departmentDatasetCounts.forEach((departmentDataset) => { %>
-                <tr class="department">
-                    <td th:text="<%=departmentDataset.departmentName%>"><%=departmentDataset.departmentName%></td>
-                    <td th:text="<%=departmentDataset.numberOfDatasets%>"><%=departmentDataset.numberOfDatasets%></td>
-                </tr>
-            <%}) %>
+                <% departmentDatasetCounts.forEach((departmentDataset) => { %>
+                    <tr class="hover:bg-gray-50">
+                        <td th:text="<%=departmentDataset.departmentName%>" class="px-4 py-3 border-t"><%=departmentDataset.departmentName%></td>
+                        <td th:text="<%=departmentDataset.numberOfDatasets%>" class="px-4 py-3 border-t"><%=departmentDataset.numberOfDatasets%></td>
+                    </tr>
+                <% }) %>
             </tbody>
         </table>
     </div>
 </body>
-</html>`;
+</html>
+`;
