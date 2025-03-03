@@ -1,6 +1,6 @@
 # Gov Data Dashboard | Typescript
 
-*This repository is a basis for the technical deep dive interview.*
+_This repository is a basis for the technical deep dive interview._
 
 [GovData.de](https://www.govdata.de/) is the data portal for Germany. The federal, state and local governments can share their data. Although the "Open Data Act" makes it obligatory to share data, only about 135,000 data sets are online so far.
 
