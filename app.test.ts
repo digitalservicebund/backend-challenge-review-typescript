@@ -19,7 +19,9 @@ describe("The app", () => {
       expect(response.text).to.contain(
         "Number of Datasets Published by Federal Ministries"
       );
-      expect(response.text).to.contain('<table class="w-full table-auto border-collapse">');
+      expect(response.text).to.contain(
+        '<table class="w-full table-auto border-collapse">'
+      );
     });
   });
 });
