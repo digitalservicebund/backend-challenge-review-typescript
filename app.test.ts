@@ -1,6 +1,6 @@
 import app from "./app";
 import { request, use, expect } from "chai";
-import chaiHttp = require("chai-http");
+import chaiHttp from "chai-http";
 import "mocha";
 import { Response } from "superagent";
 
