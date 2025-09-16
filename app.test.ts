@@ -1,25 +1,18 @@
-import app from "./app";
-import { request, use, expect } from "chai";
-import chaiHttp = require("chai-http");
-import "mocha";
-import { Response } from "superagent";
-
-use(chaiHttp);
+import { expect, test, describe } from "vitest";
+import "./app";
 
 describe("The app", () => {
   describe("GET /", () => {
-    let response: Response;
+    test("should show webpage with headline and the data table", async () => {
+      const response: Response = await fetch("http://localhost:8080/");
 
-    before(async () => {
-      response = await request(app).get("/");
-    });
+      expect(response.status).toBe(200);
 
-    it("should show webpage with headline and the data table", async () => {
-      expect(response).to.have.status(200);
-      expect(response.text).to.contain(
+      const html = await response.text();
+      expect(html).toContain(
         "Number of Datasets Published by Federal Ministries"
       );
-      expect(response.text).to.contain(
+      expect(html).toContain(
         '<table class="w-full table-auto border-collapse">'
       );
     });
