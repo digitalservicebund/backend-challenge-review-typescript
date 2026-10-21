@@ -9,6 +9,9 @@ export interface DepartmentList {
   }[];
 }
 
+// We use the name Ministry and Department for the same entity
+// We should commit to one and stay consistent. Which one do you think
+// makes the most sense?
 export function getMinistriesNames(departmentList: DepartmentList): string[] {
   const names = departmentList.departments.map((department) => department.name);
   return names;

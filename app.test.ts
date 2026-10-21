@@ -1,6 +1,8 @@
 import { expect, test, describe } from "vitest";
 import "./app";
 
+// Currently we only test the handler, it would also make sense to test
+// the different services separately
 describe("The app", () => {
   describe("GET /", () => {
     test("should show webpage with headline and the data table", async () => {

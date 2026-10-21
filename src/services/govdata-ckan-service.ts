@@ -4,6 +4,13 @@ import {
   getSubordinates,
 } from "./departments-service";
 
+// Right now entities (Organization, Department) are defined all over
+// the services. It may be worth defining them separately in a "model layer"
+// Some of the logic could also be moved to this layer. Allowing us to define
+// the business logic more neatly
+// For example getting subordinates of a department could be the responsibility
+// of a Department model, while computing the total dataset counts could stay in
+// this service.
 export type OrganizationData = {
   title: string;
   package_count: number;
